@@ -34,5 +34,15 @@ public class AlumnoServiceImpl implements AlumnoService {
 	public Optional<Alumno> buscaPorId(int idAlumno) {
 		return repository.findById(idAlumno);
 	}
+	
+	@Override
+	public List<Alumno> listaAlumnnosPorDniDiferenteAlMismo(String dni, int idAlumno) {
+		return repository.listaAlumnnosPorDniDiferenteAlMismo(dni, idAlumno);
+	}
+	
+	@Override
+	public void eliminaPorId(int idAlumno) {
+		repository.deleteById(idAlumno);
+	}
 
 }
